@@ -1,0 +1,6 @@
+<div *ngFor ="let p of Prodotti">
+    <h2>{{p.title}}</h2>
+    <h4>{{p.category | uppercase}}</h4>
+    <img [src]="p.image" *ngIf="p.rating">
+</div>
+
