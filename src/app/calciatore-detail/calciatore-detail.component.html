@@ -1,0 +1,11 @@
+<div *ngIf="calciatore">
+
+    <h2>Nome: {{calciatore.nome_completo}}</h2>
+
+    <h3>Squadra: {{calciatore.squadra | uppercase}}</h3>
+   
+    <img [src]="calciatore.foto">
+
+    <app-piede [piede]="calciatore.piede"></app-piede>
+  
+  </div>

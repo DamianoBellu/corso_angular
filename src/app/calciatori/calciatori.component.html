@@ -1,17 +1,42 @@
-<div class="box" *ngFor="let calciatore of calciatori">
-    <h1>Nome: {{ calciatore.nome_completo}}</h1>
-    <h3>Squadra: {{calciatore.squadra}}</h3>
-    <img src="{{calciatore.foto}}" alt="">
+<!-- <ul>
+  <li *ngFor="let calciatore of calciatori" class="calciatore" 
+  [ngClass]="{'selezionato':calciatoreSelezionato == calciatore, 
+  'destro': calciatore.piede == 'destro', 'sinistro': calciatore.piede == 'sinistro'}" >
+    {{calciatore.nome_completo}}
+    <button type="button" (click)="seleziona(calciatore)">Seleziona</button>
+  </li>
+</ul> -->
 
-    <div>
-        <input type="text" placeholder="piede" [(ngModel)]="calciatore.piede">
-    </div>
+<div style="display: flex;">
+  <div>
+    <app-calciatore-preview *ngFor="let c of calciatori; index as i; odd as dispari," [calciatore]="c" 
+    [delay]="(i + 1)*1000" [dispari]='dispari' (oncalciatoreSelezionato)="seleziona($event)"></app-calciatore-preview>
 
-    <div>
-        <input type="text"[(ngModel)]="calciatore.squadra">
-    </div>
-
-    <div *ngIf="calciatore.piede == 'destro' || calciatore.piede == 'ambidestro'" class=" box destro">D</div>
-    <div *ngIf="calciatore.piede == 'sinistro' || calciatore.piede == 'ambidestro'" class="box sinistro">S</div>
+    <button type="button" (click)="seleziona(undefined)">Svuota</button>
+  </div>
+  <app-calciatore-detail  [calciatore]="calciatoreSelezionato"></app-calciatore-detail>
 </div>
 
+
+<!-- <button type="button" (click)="infoBottone($event)">Cliccami</button> -->
+
+  
+
+
+<!-- <div>
+    <input type="text" placeholder="piede" [(ngModel)]="calciatore.piede">
+    {{calciatore.piede}}
+  </div>
+
+  <div>
+    <input type="text" [(ngModel)]="calciatore.squadra">
+  </div>
+
+  <div *ngIf="calciatore.piede == 'destro' || calciatore.piede == 'ambidestro'" class="box destro"> D
+  </div>
+
+  <div *ngIf="calciatore.piede == 'sinistro' || calciatore.piede == 'ambidestro'" class="box sinistro">S</div>
+
+  <pre>
+    {{calciatore | json}}
+  </pre> -->

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Calciatore } from "../models/Calciatore";
-import {CALCIATORI} from "../data/serie_A"
+import { Calciatore } from "../models/calciatore";
+import { CALCIATORI } from "../data/serie_a";
 
 @Component({
   selector: 'app-calciatori',
@@ -10,4 +10,10 @@ import {CALCIATORI} from "../data/serie_A"
 export class CalciatoriComponent {
 
   calciatori: Calciatore[] = CALCIATORI;
+
+  calciatoreSelezionato:Calciatore | undefined;
+
+  seleziona(calciatore?: Calciatore){
+    this.calciatoreSelezionato = calciatore
+  }
 }

@@ -1,0 +1,7 @@
+<div *ngIf="calciatore" [ngClass]="{'bg-dispari' : dispari}"
+    [ngClass]="{'bg-dispari' : dispari,'destro': calciatore.piede == 'destro' || calciatore.piede == 'ambidestro', 'sinistro': calciatore.piede == 'sinistro'}">
+    <h3>{{calciatore.nome_completo}}</h3>
+    <h4>{{calciatore.squadra}}</h4>
+
+    <button type="button" (click)="seleziona()">Seleziona</button>
+</div>
