@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Calciatore } from "../models/Calciatore";
+import {CALCIATORI} from "../data/serie_A"
 
 @Component({
   selector: 'app-calciatori',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class CalciatoriComponent {
 
+  calciatori: Calciatore[] = CALCIATORI;
 }

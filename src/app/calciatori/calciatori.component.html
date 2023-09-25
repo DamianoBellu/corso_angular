@@ -1,1 +1,17 @@
-<p>calciatori works!</p>
+<div class="box" *ngFor="let calciatore of calciatori">
+    <h1>Nome: {{ calciatore.nome_completo}}</h1>
+    <h3>Squadra: {{calciatore.squadra}}</h3>
+    <img src="{{calciatore.foto}}" alt="">
+
+    <div>
+        <input type="text" placeholder="piede" [(ngModel)]="calciatore.piede">
+    </div>
+
+    <div>
+        <input type="text"[(ngModel)]="calciatore.squadra">
+    </div>
+
+    <div *ngIf="calciatore.piede == 'destro' || calciatore.piede == 'ambidestro'" class=" box destro">D</div>
+    <div *ngIf="calciatore.piede == 'sinistro' || calciatore.piede == 'ambidestro'" class="box sinistro">S</div>
+</div>
+
