@@ -9,6 +9,14 @@
 
 <div style="display: flex;">
   <div>
+      <div class="form-group mb-3">
+        <input type="text"
+               placeholder="Datepicker"
+               class="form-control"
+               bsDatepicker
+               [bsConfig]="{ isAnimated: true }">
+      </div>
+
     <app-calciatore-preview *ngFor="let c of calciatori; index as i; odd as dispari," [calciatore]="c" 
     [delay]="(i + 1)*1000" [dispari]='dispari' (oncalciatoreSelezionato)="seleziona($event)"></app-calciatore-preview>
 

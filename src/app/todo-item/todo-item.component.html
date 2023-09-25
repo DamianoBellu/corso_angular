@@ -1,0 +1,4 @@
+<div *ngIf=" todo" class="list-group-item d-flex justify-content-between " [ngClass]="{'bg-success': todo.completed}">
+    {{todo.text}}
+    <button *ngIf ="!todo.completed" type="button" class="btn btn-primary" (click)="richiediCompletamento()">Completa</button>
+</div>

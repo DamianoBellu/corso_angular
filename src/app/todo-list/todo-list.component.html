@@ -1,0 +1,15 @@
+<h1>To Do List</h1>
+
+<div *ngIf= "todos.length == 0">
+    Caricamento in corso...
+</div>
+
+<div class="list-group">
+    <app-todo-item *ngFor="let t of todos" [todo]="t" (onRichiestaCompletamento)="completa($event)"></app-todo-item>
+</div>
+<hr>
+<app-todo-add (onRichiestaInserimento)="inserisci($event)"></app-todo-add>
+
+<!-- <pre>
+    {{todos | json}}
+</pre> -->
